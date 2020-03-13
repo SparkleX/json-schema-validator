@@ -1,0 +1,15 @@
+{
+	"name": "ok1",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build":"json-schema-validator"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+	},
+	"devDependencies": {
+	}
+}

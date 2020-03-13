@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.bo" : "json"
+    },
+    "json.schemas": [
+        {
+            "fileMatch": ["*.table.json", "test/*"],
+            "url": "./schema/domain.json"
+        }    
+    ]
+}

@@ -1,0 +1,82 @@
+{
+	"$schema": "https://json-schema.org/draft/2019-09/schema",
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"additionalProperties" : {
+			"type" : "boolean"
+		},
+		"type" : {
+			"type" : "string"
+		},
+		"title" : {
+			"type" : "string"
+		},
+		"description": {
+			"type": "string"
+		},
+		"primaryKey": {
+			"type": "array"
+		},
+		"properties": {
+			"$ref": "#/definitions/properties"
+		}
+	},
+	"additionalProperties": false,
+	"definitions": {
+		"properties": {
+			"type": "object",
+			"additionalProperties": {
+				"$ref": "#/definitions/property"
+			}
+		},
+		"property": {
+			"type": "object",
+			"required": [
+				"type"
+			],
+			"properties": {
+				"type": {
+					"type": "string",
+					"enum": [
+						"string",
+						"number"
+					]
+				},
+				"format" : {
+					"type" : "string", 
+					"enum" : ["date-time"]
+				},
+				"maxLength": {
+					"type": "number"
+				},
+				"default": {
+					"type": "string"
+				},
+				"values": {
+					"$ref": "#/definitions/validValues"
+				},
+				"editSize": {
+					"type": "number"
+				},
+				"editType": {
+					"type": "string",
+					"enum": [
+						"amount",
+						"price",
+						"quantity",
+						"measure"
+					]
+				}
+			},
+			"additionalProperties": false
+		},
+		"validValues": {
+			"type": "object",
+			"additionalProperties": {
+				"type": "string"
+			}
+		}
+	}
+}

@@ -1,0 +1,64 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Launch Program",
+			"cwd": "${workspaceFolder}/packages/z1-api",
+			"program": "${workspaceFolder}/packages/z1-api/dist/server.js",
+			"skipFiles": [
+				"<node_internals>/**"
+			]
+		},
+		{
+			"name": "db-conn",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}/packages/db-conn",
+			"program": "${workspaceRoot}/packages/db-conn/node_modules/jest/bin/jest.js",
+			"args": [
+				"--runInBand"
+			],
+			"env": {
+                "NODE_ENV": "development"
+			},	
+			"outFiles": [
+				"${workspaceFolder}/packages/db-conn/dist/**/*"
+			],										
+			"sourceMaps": true,
+			"console": "integratedTerminal"
+		},		
+		{
+			"name": "core-repository",
+			"type": "node",
+			"request": "launch",
+			"cwd": "${workspaceFolder}/packages/core-repository",
+			"program": "${workspaceRoot}/packages/core-repository/node_modules/jest/bin/jest.js",
+			"args": [
+				"--runInBand"
+			],
+			"env": {
+                "NODE_ENV": "development"
+			},	
+			"outFiles": [
+				"${workspaceFolder}/packages/core-repository/src/**/*"
+			],										
+			"sourceMaps": true,
+			"console": "integratedTerminal"
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "ts:core-repository",
+			"cwd": "${workspaceFolder}/packages/core-repository",
+			"runtimeArgs": [
+				"-r",
+				"ts-node/register"
+			],
+			"args": [
+				"${workspaceFolder}/packages/core-repository/test/Test.ts"
+			]
+		}		
+	]
+}
